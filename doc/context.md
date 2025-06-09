@@ -44,7 +44,7 @@ document.body.appendChild(img);
 await axe.run(img);
 
 // Test a Node list:
-const nodes = document.querySelector('main, header');
+const nodes = document.querySelectorAll('main, header');
 await axe.run(nodes);
 
 // Test an array of nodes:
@@ -74,7 +74,7 @@ There are often areas of a page that as a developer you have no control over. Yo
 await axe.run({ exclude: '.ad-banner' });
 
 // Test everything except these DOM nodes:
-const youtubeVids = document.querySelector('iframe[src^="youtube.com"]');
+const youtubeVids = document.querySelectorAll('iframe[src^="youtube.com"]');
 await axe.run({ exclude: youtubeVids });
 ```
 
