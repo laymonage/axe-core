@@ -184,11 +184,11 @@ axe.run({
 
 ## Limit Shadow DOM Testing
 
-Including or excluding specific sections of a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) tree can be done with a `fromShadowDom` selector object. This works similar to the [`fromFrames` selector](#limit-frame-testing). The `fromShadowDom` property takes an array of strings: the first to select the shadow DOM host element(s) and the last to select the element(s) to include or exclude. The following example shows how to test the `#search` form inside the shadow DOM tree attached to the `.app-header` element:
+Including or excluding specific sections of a [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) tree can be done with a `fromShadowDom` selector object. This works similar to the [`fromFrames` selector](#limit-frame-testing). The `fromShadowDom` property takes an array of strings: the first to select the shadow DOM host element(s) and the last to select the element(s) to include or exclude. The following example shows how to test the `#search` form inside the shadow DOM tree attached to the `app-header` element:
 
 ```js
 // Test each search form inside each <app-header> shadow DOM tree.
-axe.run({ fromShadowDom: ['.app-header', 'form#search'] });
+axe.run({ fromShadowDom: ['app-header', 'form#search'] });
 ```
 
 To select elements in nested shadow DOM trees, axe will need a selector for each level of nesting. The following shows how to test the `#search` element inside the `.header` element's Shadow DOM tree, inside the `app-root` custom element's shadow DOM tree:
